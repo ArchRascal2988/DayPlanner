@@ -8,7 +8,9 @@ function init(){
 }
 
 function setContent(){
-    sTasks= JSON.parse(localStorage.getItem("tasks"));
+    if(JSON.parse(localStorage.getItem("tasks"))!=null){
+        sTasks= JSON.parse(localStorage.getItem("tasks"));
+    }
     var currTime= parseInt(moment().format("k"));
     dayDisplay.innerHTML= moment().format("[Today is ] dddd");
     for(i=0;i<tasks.length;i++){
